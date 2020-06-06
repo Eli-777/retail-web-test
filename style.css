@@ -1,0 +1,138 @@
+/* 載入字型 */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700&display=swap&subset=chinese-traditional");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #f6f7f8;
+  font-family: "Noto Sans TC", sans-serif; /* 字型設定 */
+  font-style: 1rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  line-height: 0.9;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 設定區塊寬度一致並置中 */
+.container {
+  width: 85%;
+  margin: 0 auto 3rem auto;
+}
+
+.background-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*Main Header*/
+header {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  background: #fff;
+}
+
+/********* navbar *********/
+.nav {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background: #fff;
+  border: 1px solid grey;
+  /* 使選單隱藏，和漢堡排可開啟 */
+  transition: transform .3s ease-out;
+  transform: scale(1,0);
+  transform-origin: top;
+}
+
+.navbar-brand {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 60px;
+}
+
+/*導覽項目*/
+.nav-item {
+  text-align: left;
+  margin: 1rem .5rem;
+  opacity: 0;
+}
+.nav-link {
+  color: black;
+  font-weight: 700;
+}
+
+/*漢堡排顯示隱藏checkbox*/
+.navbar-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+.navbar-toggle:checked ~ .nav .nav-item {
+  transition: opacity 0.2s ease-out .15s;
+  opacity:1;
+}
+.navar-toggle {
+  visibility: hidden;
+  /* position: absolute; */
+}
+
+/*漢堡排三條線圖案位置*/
+.navbar-toggle-label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+/*漢堡排三條線圖案*/
+.humburger {
+  position: relative;
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  width: 30px;
+  height: 3px;
+  background: #267b98;
+}
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  left: 0;
+  position: absolute;
+}
